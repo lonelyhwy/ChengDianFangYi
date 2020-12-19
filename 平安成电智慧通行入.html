@@ -380,7 +380,7 @@ iframe.dictionaries-card.dictionaries-card-minimal {
     <div id="app">
 		<div class="all" data-v-78b386c8="">
 			<div class="title" data-v-78b386c8="">
-				<p data-v-78b386c8="">研究生用户，入校登记成功！</p>
+				<p data-v-78b386c8="" id ="degree_name" >研究生用户，入校登记成功！</p>
 			</div>
 				<div class="student" data-v-78b386c8="">
 					<div class="info" data-v-78b386c8="">
@@ -395,7 +395,7 @@ iframe.dictionaries-card.dictionaries-card-minimal {
 							<img width="12" alt="" src="./平安成电智慧通行入_files/user-group-fill.02d9192d.png" data-v-78b386c8=""> 
 							登记类型
 						</span>
-						<span class="education" data-v-78b386c8="">研究生（硕士）</span>
+						<span class="education" id ="degree_name2" data-v-78b386c8="">研究生（硕士）</span>
 					</div>
 					<div class="info" data-v-78b386c8="">
 						<span data-v-78b386c8="">
@@ -423,6 +423,11 @@ iframe.dictionaries-card.dictionaries-card-minimal {
 		姓名：<input type="text" id="uname" placeholder="请输入你的名字" autocomplete="off" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
 		<input type="button" value="确认" onclick="name_in()">
 	</div>
+
+  <div id="degree_get" class="all">
+    姓名：<input type="text" id="dname" placeholder="输入学历(本科生/研究生)" autocomplete="off" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
+    <input type="button" value="确认并跳转" onclick="degree_in()">
+  </div>
 <script type="text/javascript">
 function getTime(){
 	var myDate = new Date();
@@ -455,10 +460,25 @@ function name_in(){
 	var app = document.getElementById("app");
 	var name_get =document.getElementById("name_get");
 	name.innerHTML = text;
-	name_get.style.display = "none";
-	app.style.display = "block";
+	// name_get.style.display = "none";
+	// app.style.display = "block";
 	
 }
+
+function degree_in(){
+  var utext = document.getElementById("dname");
+  var text = utext.value;
+  var name = document.getElementById("degree_name");
+  var name2 = document.getElementById("degree_name2")
+  var app = document.getElementById("app");
+  var name_get =document.getElementById("degree_get");
+  name.innerHTML = text+"用户,入校登记成功";
+  name2.innerHTML = text;
+  name_get.style.display = "none";
+  app.style.display = "block";
+  
+}
+
 getTime();
 doMove();
 </script>
